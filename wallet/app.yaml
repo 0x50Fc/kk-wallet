@@ -1,0 +1,122 @@
+
+title: 钱包
+type: kk/micro
+
+services:
+  Wallet:
+    title: 钱包服务
+    tasks:
+      Create:
+        title: 创建钱包
+        name: /wallet/create
+        output:
+          - name: wallet
+            title: 钱包
+            omitempty: true
+            type: Wallet
+      ItemCreate:
+        title: 创建流水
+        name: /item/create
+        input:
+          - name: id
+            title: 钱包ID
+            type: long
+          - name: orderId
+            type: long
+            title: 订单ID
+          - name: tx
+            type: long
+            title: 分布事务ID
+          - name: inValue
+            type: long
+            title: 增加的余额(分)
+          - name: inFreeze
+            type: long
+            title: 增加的冻结金额(分)
+        output:
+          - name: item
+            title: 流水
+            omitempty: true
+            type: Item
+      ItemQuery:
+        title: 查询流水
+        name: /item/query
+        type: query
+        input:
+          - name: id
+            title: 钱包ID
+            type: object
+          - name: orderId
+            type: object
+            title: 订单ID
+          - name: orderBy
+            type: string
+            title: desc 降序默认 asc 升序
+          - name: startTime
+            type: object
+            title: 开始时间(秒)
+          - name: endTime
+            type: object
+            title: 开始时间(秒)
+        output:
+          - name: items
+            title: 流水
+            omitempty: true
+            type: Item[]
+
+
+objects:
+  Wallet:
+    title: 钱包
+    name: wallet
+    type: db
+    fields:
+      - name: value
+        type: long
+        title: 余额(分)
+      - name: inValue
+        type: long
+        title: 累计收入(分)
+      - name: outValue
+        type: long
+        title: 累计支出(分)
+      - name: freeze
+        type: long
+        title: 冻结金额(分)
+      - name: ctime
+        type: long
+        title: 创建时间
+      - name: mtime
+        type: long
+        title: 修改时间
+  Item:
+    title: 交易流水
+    name: item
+    type: db
+    fields:
+      - name: walletId
+        type: long
+        title: 钱包ID
+        index: asc
+      - name: orderId
+        type: long
+        title: 订单ID
+        index: asc
+      - name: inValue
+        type: long
+        title: 增加的余额(分)
+      - name: inFreeze
+        type: long
+        title: 增加的冻结金额(分)
+      - name: value
+        type: long
+        title: 变更后余额(分)
+      - name: freeze
+        type: long
+        title: 变更后冻结金额(分)
+      - name: ctime
+        type: long
+        title: 创建时间
+        index: asc
+
+      
