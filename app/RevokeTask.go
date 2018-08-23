@@ -1,7 +1,7 @@
 package app
 
 /*B(Import)*/
-/*E(Import)*/
+	/*E(Import)*/
 
 type /*B(Result)*/ RevokeTaskResult /*E(Result)*/ struct {
 	/*B(Result.Base)*/
@@ -18,17 +18,8 @@ type /*B(Task)*/ RevokeTask /*E(Task)*/ struct {
 	/*E(Task.Base)*/
 
 	/*B(Input)*/ /*E(Input)*/
-	/*B(Input.options)*/
-	Options interface{} `json:"options" title:"其他数据"`
-	/*E(Input.options)*/
-	/*B(Input.title)*/
-	Title string `json:"title" title:"标题"`
-	/*E(Input.title)*/
-	/*B(Input.freeze)*/
-	Freeze bool `json:"freeze" title:"是否冻结"`
-	/*E(Input.freeze)*/
 	/*B(Input.value)*/
-	Value int64 `json:"value" title:"提现金额(分)"`
+	Value int64 `json:"value" title:"交易金额(分)"`
 	/*E(Input.value)*/
 	/*B(Input.walletId)*/
 	WalletId int64 `json:"walletId" title:"钱包ID"`
@@ -41,7 +32,7 @@ type /*B(Task)*/ RevokeTask /*E(Task)*/ struct {
 
 /*B(name)*/
 func (T *RevokeTask) GetName() string {
-	return "/order/revoke"
+	return "order/revoke"
 }
 
 /*E(name)*/

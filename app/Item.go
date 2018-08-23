@@ -1,9 +1,8 @@
 package app
 
 /*B(Import)*/
-import "github.com/hailongz/kk-lib/db"
-
-/*E(Import)*/
+	import "github.com/hailongz/kk-lib/db"
+	/*E(Import)*/
 
 type /*B(Object)*/ Item /*E(Object)*/ struct {
 	/*B(Object.Base)*/
@@ -11,21 +10,18 @@ type /*B(Object)*/ Item /*E(Object)*/ struct {
 	/*E(Object.Base)*/
 
 	/*B(Property)*/ /*E(Property)*/
+	/*B(Property.iid)*/
+	Iid int64 `json:"iid" title:"流水ID" index:"asc"`
+	/*E(Property.iid)*/
+	/*B(Property.walletValue)*/
+	WalletValue int64 `json:"walletValue" title:"变更后余额(分)"`
+	/*E(Property.walletValue)*/
 	/*B(Property.ctime)*/
-	Ctime int64 `json:"ctime" title:"创建时间" index:"asc"`
+	Ctime int64 `json:"ctime" title:"创建时间" index:"desc"`
 	/*E(Property.ctime)*/
-	/*B(Property.freeze)*/
-	Freeze int64 `json:"freeze" title:"变更后冻结金额(分)"`
-	/*E(Property.freeze)*/
 	/*B(Property.value)*/
-	Value int64 `json:"value" title:"变更后余额(分)"`
+	Value int64 `json:"value" title:"增加的余额(分)"`
 	/*E(Property.value)*/
-	/*B(Property.inFreeze)*/
-	InFreeze int64 `json:"inFreeze" title:"增加的冻结金额(分)"`
-	/*E(Property.inFreeze)*/
-	/*B(Property.inValue)*/
-	InValue int64 `json:"inValue" title:"增加的余额(分)"`
-	/*E(Property.inValue)*/
 	/*B(Property.orderId)*/
 	OrderId int64 `json:"orderId" title:"订单ID" index:"asc"`
 	/*E(Property.orderId)*/

@@ -1,0 +1,9 @@
+package app
+
+const (
+	ERROR_NOT_FOUND       = 10001
+	ERROR_NOT_FOUND_ID    = 10002
+	ERROR_NOT_FOUND_VALUE = 10003
+	ERROR_STATUS          = 10003
+	ERROR_VALUE           = 10004
+)

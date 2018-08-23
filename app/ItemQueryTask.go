@@ -1,22 +1,21 @@
 package app
 
 /*B(Import)*/
-import "github.com/hailongz/kk-micro/micro"
+	import "github.com/hailongz/kk-micro/micro"
+	/*E(Import)*/
 
-/*E(Import)*/
-
-type /*B(Result)*/ QueryTaskResult /*E(Result)*/ struct {
+type /*B(Result)*/ ItemQueryTaskResult /*E(Result)*/ struct {
 	/*B(Result.Base)*/
 	micro.QueryTaskResult
 	/*E(Result.Base)*/
 
 	/*B(Output)*/ /*E(Output)*/
 	/*B(Output.items)*/
-	Items []Order `json:"items,omitempty" title:"流水"`
+	Items []Item `json:"items,omitempty" title:"流水"`
 	/*E(Output.items)*/
 }
 
-type /*B(Task)*/ QueryTask /*E(Task)*/ struct {
+type /*B(Task)*/ ItemQueryTask /*E(Task)*/ struct {
 	/*B(Task.Base)*/
 	micro.QueryTask
 	/*E(Task.Base)*/
@@ -28,40 +27,37 @@ type /*B(Task)*/ QueryTask /*E(Task)*/ struct {
 	/*B(Input.startTime)*/
 	StartTime interface{} `json:"startTime" title:"开始时间(秒)"`
 	/*E(Input.startTime)*/
-	/*B(Input.status)*/
-	Status string `json:"status" title:"状态 多个逗号分割"`
-	/*E(Input.status)*/
-	/*B(Input.type)*/
-	Type string `json:"type" title:"类型 多个逗号分割"`
-	/*E(Input.type)*/
 	/*B(Input.orderBy)*/
 	OrderBy string `json:"orderBy" title:"desc 降序默认 asc 升序"`
 	/*E(Input.orderBy)*/
+	/*B(Input.orderId)*/
+	OrderId interface{} `json:"orderId" title:"订单ID"`
+	/*E(Input.orderId)*/
 	/*B(Input.id)*/
-	Id interface{} `json:"id" title:"订单ID"`
+	Id int64 `json:"id" title:"钱包ID"`
 	/*E(Input.id)*/
 
 	/*B(Task.Result)*/
-	Result QueryTaskResult `json:"-"`
+	Result ItemQueryTaskResult `json:"-"`
 	/*E(Task.Result)*/
 }
 
 /*B(name)*/
-func (T *QueryTask) GetName() string {
-	return "/order/query"
+func (T *ItemQueryTask) GetName() string {
+	return "item/query"
 }
 
 /*E(name)*/
 
 /*B(title)*/
-func (T *QueryTask) GetTitle() string {
-	return "查询订单"
+func (T *ItemQueryTask) GetTitle() string {
+	return "查询流水"
 }
 
 /*E(title)*/
 
 /*B(Task.GetResult)*/
-func (T *QueryTask) GetResult() interface{} {
+func (T *ItemQueryTask) GetResult() interface{} {
 	return &T.Result
 }
 

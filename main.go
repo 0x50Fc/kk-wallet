@@ -9,6 +9,7 @@ import (
 	"github.com/hailongz/kk-lib/dynamic"
 	"github.com/hailongz/kk-lib/kk"
 	"github.com/hailongz/kk-micro/micro"
+	"github.com/hailongz/kk-wallet/app"
 )
 
 func main() {

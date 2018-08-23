@@ -1,0 +1,102 @@
+{
+	"item": {
+		"ctime": {
+			"title": "创建时间",
+			"index": "desc",
+			"name": "ctime",
+			"type": "long"
+		},
+		"iid": {
+			"index": "asc",
+			"name": "iid",
+			"type": "long",
+			"title": "流水号"
+		},
+		"walletId": {
+			"name": "walletId",
+			"type": "long",
+			"title": "钱包ID",
+			"index": "asc"
+		},
+		"orderId": {
+			"name": "orderId",
+			"type": "long",
+			"title": "订单ID",
+			"index": "asc"
+		},
+		"walletValue": {
+			"name": "walletValue",
+			"type": "long",
+			"title": "变更后余额(分)"
+		},
+		"value": {
+			"type": "long",
+			"title": "增加的余额(分)",
+			"name": "value"
+		}
+	},
+	"order": {
+		"fwalletId": {
+			"name": "fwalletId",
+			"type": "long",
+			"title": "支出钱包ID"
+		},
+		"twalletId": {
+			"type": "long",
+			"title": "收入钱包ID",
+			"name": "twalletId"
+		},
+		"value": {
+			"title": "交易金额(分)",
+			"name": "value",
+			"type": "long"
+		},
+		"ctime": {
+			"name": "ctime",
+			"type": "long",
+			"title": "创建时间"
+		},
+		"fitemId": {
+			"name": "fitemId",
+			"type": "long",
+			"title": "支出流水ID"
+		},
+		"titemId": {
+			"type": "long",
+			"title": "收入流水ID",
+			"name": "titemId"
+		}
+	},
+	"wallet": {
+		"value": {
+			"name": "value",
+			"type": "long",
+			"title": "余额(分)"
+		},
+		"inValue": {
+			"type": "long",
+			"title": "累计收入(分)",
+			"name": "inValue"
+		},
+		"outValue": {
+			"title": "累计支出(分)",
+			"name": "outValue",
+			"type": "long"
+		},
+		"iid": {
+			"name": "iid",
+			"type": "long",
+			"title": "最后流水号"
+		},
+		"ctime": {
+			"name": "ctime",
+			"type": "long",
+			"title": "创建时间"
+		},
+		"mtime": {
+			"type": "long",
+			"title": "修改时间",
+			"name": "mtime"
+		}
+	}
+}

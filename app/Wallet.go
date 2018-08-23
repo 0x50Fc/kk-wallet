@@ -10,15 +10,15 @@ type /*B(Object)*/ Wallet /*E(Object)*/ struct {
 	/*E(Object.Base)*/
 
 	/*B(Property)*/ /*E(Property)*/
+	/*B(Property.iid)*/
+	Iid int64 `json:"iid" title:"最后流水ID"`
+	/*E(Property.iid)*/
 	/*B(Property.mtime)*/
 	Mtime int64 `json:"mtime" title:"修改时间"`
 	/*E(Property.mtime)*/
 	/*B(Property.ctime)*/
 	Ctime int64 `json:"ctime" title:"创建时间"`
 	/*E(Property.ctime)*/
-	/*B(Property.freeze)*/
-	Freeze int64 `json:"freeze" title:"冻结金额(分)"`
-	/*E(Property.freeze)*/
 	/*B(Property.outValue)*/
 	OutValue int64 `json:"outValue" title:"累计支出(分)"`
 	/*E(Property.outValue)*/

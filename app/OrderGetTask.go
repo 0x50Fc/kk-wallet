@@ -1,9 +1,9 @@
 package app
 
 /*B(Import)*/
-/*E(Import)*/
+	/*E(Import)*/
 
-type /*B(Result)*/ CancelTaskResult /*E(Result)*/ struct {
+type /*B(Result)*/ OrderGetTaskResult /*E(Result)*/ struct {
 	/*B(Result.Base)*/
 	/*E(Result.Base)*/
 
@@ -13,7 +13,7 @@ type /*B(Result)*/ CancelTaskResult /*E(Result)*/ struct {
 	/*E(Output.order)*/
 }
 
-type /*B(Task)*/ CancelTask /*E(Task)*/ struct {
+type /*B(Task)*/ OrderGetTask /*E(Task)*/ struct {
 	/*B(Task.Base)*/
 	/*E(Task.Base)*/
 
@@ -23,26 +23,26 @@ type /*B(Task)*/ CancelTask /*E(Task)*/ struct {
 	/*E(Input.id)*/
 
 	/*B(Task.Result)*/
-	Result CancelTaskResult `json:"-"`
+	Result OrderGetTaskResult `json:"-"`
 	/*E(Task.Result)*/
 }
 
 /*B(name)*/
-func (T *CancelTask) GetName() string {
-	return "/order/cancel"
+func (T *OrderGetTask) GetName() string {
+	return "order/get"
 }
 
 /*E(name)*/
 
 /*B(title)*/
-func (T *CancelTask) GetTitle() string {
-	return "取消"
+func (T *OrderGetTask) GetTitle() string {
+	return "获取订单"
 }
 
 /*E(title)*/
 
 /*B(Task.GetResult)*/
-func (T *CancelTask) GetResult() interface{} {
+func (T *OrderGetTask) GetResult() interface{} {
 	return &T.Result
 }
 
